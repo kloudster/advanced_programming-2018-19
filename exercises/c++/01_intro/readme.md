@@ -1,77 +1,23 @@
-# Exercises - session 01
+# Requirements
 
-## Understanding compiler messages
-- Take a simple program (e.g., the hello world one) and put one at a time the following errors. Compile it and try to understand the error messages. If you have both `g++` and `clang++` compare the messages from the two compilers.
-  - typos in function name (e.g., `c0ut`)
-  - typos in variable name
-  - forget to put `;`
-  - forget to `#include <iostream>`
-  - declare a variable with illegal name like `int double {0};`
-  - pass wrong type of argument to a function
+1. Do all the exercises.
+2. There is no deadline for the exercises **but** in order to take the oral examination, you have to have completed all the exercises. Exercises marked as *optional* are optional.
 
+# Suggestions
 
-## uniq
-- Write a simple version of the Unix program `uniq -c`, which, when fed with a text, outputs the same text with **consecutive** identical lines collapsed to one prepended with the number of repetitions
+1. Do the exercises week by week.
+2. Let me know if you want me to review your codes.
+3. Push the implementations of the exercises on the master branch of your fork.
+4. Read and review the codes of your mates. This is the best way to learn. As for natural languages you learn to write by reading books, essays etc. You learn to code by reading others' codes and practicing as well.
+5. Try to do the *optional* exercises. I don't give hints for the solution to this type of exercises. Typically, you need more than what is explained during the lecture. So, Google is your friend. In this way you will learn what to look for and how to look for it. You are forced to read others' solutions and possibly understand them. Simple copy-and-paste doesn't help.
+6. Ask questions.
+7. Ask questions.
+8. Ask questions.
+9. You can always (re-)implement old exercises with the new features you will learn throughout the course.
+10. It is normal to write the same piece of code **at least three times**:
+    1. To understand how to code it
+    2. To make it right
+    3. To make it better
+11. **Keep it simple**, as simple as you can!
+12. Don't panic: you will do it!
 
-*Hints*: you can scan the stdin as follows
-```
-std::string line;
-while(std::getline(std::cin,line))
-{...}
-```
-or
-```
-for(std::string line; std::getline(std::cin,line);)
-{...}
-```
-What do you think it is better? Why?
-
-Remember that if you type directly from stdin, you should press `Ctr+D` to close the stdin without interrupting the program. Moreover, you can redirect the content of a text to stdin trough the `<` operator
-```
-./a.out <a_file
-```
-
-You can compare strings with the `==` operator
-```
-std::string s1;
-std::string s2;
-...
-if(s1 == s2)
-if(s1 != s2)
-```
-
-## Getters
-- write a function `get_int` that reads from stdin until a valid number is fed
-- write a function `get_double` that reads from stdin until a valid number is fed.
-
-*Hints*: 
-You can keep reading from stdin using one of two statements
-```
-while(std::cin >> i)
-```
-or
-```
-while(!(std::cin >> i))
-```
-what is the difference?
-
-After a wrong input you have to clear the error flag from `std::cin`  calling
-```
-std::cin.clear();
-```
-and ignore what just read
-```
-std::cin.ignore();
-```
-
-## Units of measure
-
-- Write a code that reads a number with its proper unit of measure, and prints back that number according to the SI units, e.g.
-
-```
-1 inch
-0.0254 m
-```
-
-## **Optional**: Text formatter
-- Write a simple text formatter that breaks the lines longer than a given number of characters. This formatter does not break words and leaves unmodified the lines shorter than the given threshold.
